@@ -1,4 +1,4 @@
-FROM yumao24678/cicd-tools:v1
+FROM fufeng24678/cicd-tools:v1
 
 RUN set -eux; \
             \
@@ -17,13 +17,13 @@ RUN set -eux; \
 
 ###
 # 构建命令
-#   docker build -t noi1031/cicd-tools:v1-aws ./
+#   docker build -t fufeng24678/cicd-tools:v1-aws ./
 ###
 # 测试运行
 #   docker run -it --rm \
 #     -v /var/run/docker.sock:/var/run/docker.sock \
 #     -v ~/.kube:/root/.kube \
 #     -v ~/.aws:/root/.aws \
-#     noi1031/cicd-tools:v1-aws /bin/bash
+#     fufeng24678/cicd-tools:v1-aws /bin/bash
 # 可以对 aws 命令进行测试 : aws sts get-caller-identity
 ###

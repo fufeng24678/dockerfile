@@ -1,7 +1,4 @@
-FROM yumao24678/cicd-tools:v1-podman
-
-# 中科大镜像源出问题时可以使用阿里云镜像源
-COPY sources.list-zkd /etc/apt/sources.list
+FROM fufeng24678/cicd-tools:v1-podman
 
 RUN set -eux; \
             \
@@ -20,13 +17,13 @@ RUN set -eux; \
 
 ###
 # 构建命令
-#   podman build -t noi1031/cicd-tools:v1-podman-aws ./
+#   podman build -t fufeng24678/cicd-tools:v1-podman-aws ./
 ###
 # 测试运行
 #   podman run -it --rm \
 #     -v /var/run/podman/podman.sock:/var/run/podman/podman.sock \
 #     -v ~/.kube:/root/.kube \
 #     -v ~/.aws:/root/.aws \
-#     noi1031/cicd-tools:v1-podman-aws /bin/bash
+#     fufeng24678/cicd-tools:v1-podman-aws /bin/bash
 # 可以对 aws 命令进行测试 : aws sts get-caller-identity
 ###

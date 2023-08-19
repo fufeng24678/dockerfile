@@ -1,4 +1,4 @@
-FROM docker.io/library/debian:11
+FROM docker.io/library/debian:12
 
 # 中科大镜像源出问题时可以使用阿里云镜像源
 COPY sources.list-zkd /etc/apt/sources.list
@@ -22,11 +22,11 @@ RUN set -eux; \
 
 ###
 # 构建命令
-#   podman build -t noi1031/cicd-tools:v1-podman ./
+#   podman build -t fufeng24678/cicd-tools:v1-podman ./
 ###
 # 测试运行
 #   podman run -it --rm \
 #     -v /var/run/podman/podman.sock:/var/run/podman/podman.sock \
 #     -v ~/.kube:/root/.kube \
-#     noi1031/cicd-tools:v1-podman /bin/bash
+#     fufeng24678/cicd-tools:v1-podman /bin/bash
 ###
