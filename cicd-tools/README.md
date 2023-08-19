@@ -4,7 +4,7 @@
 
 :warning: `kubectl`、`docker|podman`、`git` 是所有 tag 镜像中的默认工具，基础容器工具 ( `docker|podman` ) 根据镜像 tag 区分，tag 中出现 podman 的其基础容器工具即为 podman，如果 tag 中没有出现 podman 的其基础容器工具为 docker 
 
-Dockerfile 地址 : https://github.com/yumao24678/dockerfile/tree/main/cicd-tools
+Dockerfile 地址 : https://github.com/fufeng24678/dockerfile/tree/main/cicd-tools
 
 ## 镜像说明 
 
@@ -25,7 +25,7 @@ Dockerfile 地址 : https://github.com/yumao24678/dockerfile/tree/main/cicd-tool
 docker run -it --rm \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v ~/.kube:/root/.kube \
-  yumao24678/cicd-tools:v1 /bin/bash
+  fufeng24678/cicd-tools:v1 /bin/bash
 ```
 
 > 测试 docker
@@ -69,7 +69,7 @@ docker run -it --rm \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v ~/.kube:/root/.kube \
   -v ~/.aws:/root/.aws \
-  yumao24678/cicd-tools:v1-aws /bin/bash
+  fufeng24678/cicd-tools:v1-aws /bin/bash
 ```
 
 > 执行 aws 命令测试
@@ -89,7 +89,7 @@ docker run -it --rm \
 podman run -it --rm \
   -v /var/run/podman/podman.sock:/var/run/podman/podman.sock \
   -v ~/.kube:/root/.kube \
-  yumao24678/cicd-tools:v1-podman /bin/bash
+  fufeng24678/cicd-tools:v1-podman /bin/bash
 ```
 
 > 容器中的 podman 仅为客户端，必须挂载宿主机的 `podman.sock` 才能正常使用，宿主机上必须正确安装 podman 工具
