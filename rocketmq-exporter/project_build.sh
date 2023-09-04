@@ -33,8 +33,3 @@ docker run --rm \
     -v "$(pwd)"/"$PROJECT_DIR":/"$PROJECT_DIR" \
     --entrypoint=/bin/bash \
     "$BUILD_IMAGE" -c "mvn clean package -Dmaven.test.skip=true"
-
-# rm -rf *.jar *.yml
-
-# cp -a ./src/"$PROJECT_DIR"/target/*-exec.jar ./
-# cp -a ./src/"$PROJECT_DIR"/src/main/resources/application.yml ./
