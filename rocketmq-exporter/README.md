@@ -12,12 +12,12 @@
 
 可选参数在 CMD 中指定，参数前加 `--` 
 
-|               参数               |     默认值     |
-| :------------------------------: | :------------: |
-|   rocketmq.config.namesrvAddr    | 127.0.0.1:9876 |
-| rocketmq.config.rocketmqVersion  |     4_9_4      |
-|           server.port            |      5557      |
-| rocketmq.config.webTelemetryPath |    /metrics    |
+|               参数               |     默认值     |                 描述                  |
+| :------------------------------: | :------------: | :-----------------------------------: |
+|   rocketmq.config.namesrvAddr    | 127.0.0.1:9876 |  nameSrv 地址，多个地址使用分号分隔   |
+| rocketmq.config.rocketmqVersion  |     4_9_4      | rocketmq 版本，建议与实际使用版本对应 |
+|           server.port            |      5557      |           metrics 暴露端口            |
+| rocketmq.config.webTelemetryPath |    /metrics    |             metrics path              |
 
 # demo
 
