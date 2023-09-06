@@ -2,8 +2,6 @@
 
 ***
 
-# \[ rocketmq-exporter \] 
-
 基于 [![](https://img.shields.io/badge/GitHub-apache/rocketmq--exporter-green?logo=github)](https://github.com/apache/rocketmq-exporter) 项目构建 docker 镜像
 
 该项目 github 地址 ( dockerfile 及构建脚本 ): https://github.com/fufeng24678/dockerfile/tree/main/rocketmq-exporter 
