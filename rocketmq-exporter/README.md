@@ -17,26 +17,30 @@
 |           server.port            |      5557      |           metrics 暴露端口            |
 | rocketmq.config.webTelemetryPath |    /metrics    |             metrics path              |
 
-# demo
+# Demo
 
 demo 环境信息
 
 - rocketmqNameSrv: `10.11.12.57:9876;10.11.12.58:9876;10.11.12.59:9876` 
 - rocketmqVersion: `4_9_7` 
 
-## docker cli
+## docker-cli 启动
 
 ```shell
 docker run -d \
+  --name=rocketmq-exporter \
+  --restart=always \
   -p 5557:5557 \
   fufeng24678/rocketmq-exporter:latest \
   --rocketmq.config.namesrvAddr="10.11.12.57:9876;10.11.12.58:9876;10.11.12.59:9876" \
   --rocketmq.config.rocketmqVersion=4_9_7
 ```
 
-## docker-compose
+## docker-compose 启动
 
-```shell
+资源清单地址: https://github.com/fufeng24678/docker-compose/tree/main/rocketmq-exporter 
+
+```yaml
 version: '3.8'
 services:
   rocketmq-exporter:
@@ -51,3 +55,27 @@ services:
     - /usr/share/zoneinfo/Asia/Shanghai:/etc/localtime:ro
 ```
 
+# Prometheus 发现配置
+
+```yaml
+scrape_configs:
+- job_name: "rocketmq-03"
+  static_configs:
+  - targets:
+    - 10.11.12.59:5557
+    labels:
+      hostname: rocketmq-03
+  # file_sd_configs:
+  # - files:
+  #   - /etc/prometheus/file_sd/redis.yaml
+  metric_relabel_configs:
+  - source_labels:
+    - __name__
+    regex: "go_.*"
+    action: drop
+```
+
+# Grafana 面板推荐
+
+- 14612
+- 10477
