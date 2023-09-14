@@ -29,6 +29,3 @@ ENTRYPOINT [ "redis_exporter" ]
 # 构建命令
 #   docker build --network=host -t fufeng24678/redis-exporter:1.53.0 ./
 ###
-# 可控环境变量
-#   参考 : https://github.com/oliver006/redis_exporter
-###
